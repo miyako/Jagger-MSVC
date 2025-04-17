@@ -309,7 +309,7 @@ int main (int argc, char** argv) {
   jagger::tagger jagger;
   jagger.read_model(m);
 
-  if (_isatty(0) == 1) { // interactive IO
+  if ((_isatty(0) == 1)||(interactive)){ // interactive IO
           if (tagging) jagger.run <true, true>(); else jagger.run <false, true>();
       }
   else { // batch
